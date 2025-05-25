@@ -1,0 +1,71 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas: 
+  "navbar navbar navbar"
+  "itemlistcontainer itemlistcontainer itemlistcontainer"
+  ;
+  height: 100vh;
+}
+
+.navbar {
+  grid-area: navbar;
+  display: flex;
+  background-color: #3498db;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 1rem;
+  font-size: 24px;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem; 
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-right: 1rem; 
+  list-style: none;  
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black; 
+}
+.navbar ul li:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.ItemListContainer {
+  grid-area: itemlistcontainer;
+  padding: 2rem;
+}
