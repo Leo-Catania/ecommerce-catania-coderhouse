@@ -1,14 +1,5 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  margin: 0 auto;
-  padding: 0;
-}
 
 .container {
   display: grid;
@@ -24,7 +15,7 @@
 .navbar {
   grid-area: navbar;
   display: flex;
-  background-color: #3498db;
+  background-color: #1b2c38;
   align-items: center;
   justify-content: space-between;
   color: white;
@@ -40,7 +31,7 @@
   padding: 0;
 }
 
-.navbar ul li {
+.navbar ul .navbar--li {
   margin-right: 1rem; 
   list-style: none;  
   background-color: white;

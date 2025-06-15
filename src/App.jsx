@@ -8,7 +8,7 @@ function App() {
     <>
       <div className="container">
         <NavBar />
-        <ItemListContainer text='Bueno, hola es la primera vez que hago esto, todavia no se nombre ponerle a la pagina'/>
+        <ItemListContainer/>
       </div>
     </>
   )
