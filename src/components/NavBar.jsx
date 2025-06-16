@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import '../index.css';
 import CartWidget from './CartWidget'
 import NavDropdown from "react-bootstrap/NavDropdown";
 import {Link, NavLink } from "react-router";
