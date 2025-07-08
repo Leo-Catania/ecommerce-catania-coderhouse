@@ -1,10 +1,13 @@
-import '../index.css';
+import { useContext } from 'react'
+import { CartContext } from "../context/CartContext";
 import { BsCart } from "react-icons/bs";
 
 export default function CartWidget() {
+
+    const { conseguirCantidad } = useContext(CartContext)
+    const cantidadTotal = conseguirCantidad()
+
     return(
-        <div className="cart-widget flex">
-            <BsCart /> 3
-        </div>
+        <button><BsCart />{cantidadTotal}</button>
     )
 }

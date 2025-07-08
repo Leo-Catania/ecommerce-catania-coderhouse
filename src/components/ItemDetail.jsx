@@ -1,3 +1,4 @@
+import ItemCount from "./ItemCount"
 
 export default function ItemDetail ({detail}) {
 
@@ -8,6 +9,7 @@ export default function ItemDetail ({detail}) {
                     <h4>{detail.brand}</h4>
                     <p>{detail.description}</p>
                     <h3>${detail.price}</h3>
+                    <ItemCount prod={detail}/>
         </div>
     )
 }
