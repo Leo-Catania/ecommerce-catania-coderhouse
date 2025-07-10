@@ -32,11 +32,13 @@ export default function CartProvider ({ children }) {
         return cantidadTotal
     } 
 
-    console.log(carrito)
+    const calcularTotal = () => {
+        return carrito.reduce((acc, prod) => acc + (prod.precio * (prod.count || 1)), 0);
+    }
 
     
     return (
-        <CartContext.Provider value={ {carrito, agregarAlCarrito, conseguirCantidad} }>
+        <CartContext.Provider value={ {carrito, agregarAlCarrito, conseguirCantidad, calcularTotal} }>
             {children}
         </CartContext.Provider>
     )
