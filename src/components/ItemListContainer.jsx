@@ -20,12 +20,6 @@ export default function ItemListContainer () {
                     setItems(prod)
                 })
         }
-
-
-
-
-        
-
     },[categoryName])
     return(
         <ItemList items={items} />

@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 export default function Cart () {
 
-    const {carrito, calcularTotal} = useContext(CartContext)
+    const {carrito, calcularTotal, vaciarCarrito, quitarDelCarrito} = useContext(CartContext)
     const total = calcularTotal();
 
     return (
@@ -14,7 +14,7 @@ export default function Cart () {
                 <ol className="list-group list-group-numbered">
             {carrito.map(prod => (
                 <li key={prod.id} className="list-group-item d-flex justify-content-between align-items-start">
-                    <button type="button" className="btn-close inline" aria-label="Close"></button>
+                    <button onClick={() => quitarDelCarrito(prod.id)} type="button" className="btn-close inline" aria-label="Close"></button>
                     <div className="ms-2 me-auto">
                     <div className="fw-bold">{prod.nombre}</div>
                     </div>
@@ -24,9 +24,12 @@ export default function Cart () {
             </div>
             <div className="col-lg-8">
                 <h2>${total}</h2>
+                <div className="d-grid gap-2">
+                        <button onClick={vaciarCarrito} className="btn btn-danger m-2" type="button">Vaciar carrito</button>
+                </div>
                 <NavLink to='/chekout'>
                 <div className="d-grid gap-2">
-                        <button className="btn btn-primary" type="button">Ir al Chekout</button>
+                        <button className="btn btn-primary m-2" type="button">Ir al Chekout</button>
                 </div>
                 </NavLink>
             </div>

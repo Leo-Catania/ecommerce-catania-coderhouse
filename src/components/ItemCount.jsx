@@ -28,7 +28,7 @@ export default function ItemCount ({prod}) {
                     <div className="row"><h4 className="text-center">Cantidad: {count}</h4></div>
                         <div className="row">
                             <div className="col-lg-6 w-50 text-center">
-                                <button onClick={handleRestar} className="hover:duration-200 ease-in hover:scale-400" >-</button>
+                                <button onClick={handleRestar} disabled={count <= 1} className="hover:duration-200 ease-in hover:scale-400" >-</button>
                             </div>
                             <div className="col-lg-6 w-50 text-center">
                                 <button onClick={handleSumar} className="hover:duration-200 ease-in hover:scale-400">+</button>

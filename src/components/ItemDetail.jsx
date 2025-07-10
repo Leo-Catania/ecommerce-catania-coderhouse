@@ -1,7 +1,6 @@
 import ItemCount from "./ItemCount"
 
 export default function ItemDetail ({detail}) {
-
     return(
         <div className="container-fluid detail">
             <div className="row">
@@ -15,19 +14,12 @@ export default function ItemDetail ({detail}) {
                         <div className="col-lg-7 g-1 w-50">
                             <img className="image" src={detail.imagen} alt={detail.nombre} />
                         </div>
-                            
-                        
-                            
-                        
-                        </div>
-                    
+                    </div>
                 </div>
                 <div className="col-lg-4 container-fluid m-4">
                     <ItemCount prod={detail}/>
                 </div>
-            </div>
-            
-                    
+            </div>        
         </div>
     )
 }
