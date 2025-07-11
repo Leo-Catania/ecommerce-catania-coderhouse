@@ -2,6 +2,7 @@ import { CartContext } from "../context/CartContext"
 import { useContext } from "react"
 import { crearOrden } from "../firebase/db"
 import { serverTimestamp } from "firebase/firestore"
+import Swal from "sweetalert2"
 
 export default function Chekout () {
 
@@ -20,6 +21,14 @@ export default function Chekout () {
                 numero,
                 productos: carrito,
                 tiempo: serverTimestamp()
+        })
+
+        Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Orden Agregada",
+                showConfirmButton: false,
+                timer: 1500
         })
         }
 

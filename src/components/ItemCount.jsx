@@ -1,16 +1,29 @@
 import { useState, useContext } from "react"
 import { CartContext } from "../context/CartContext"
+import Swal from "sweetalert2"
 
 export default function ItemCount ({prod}) {
 
     const [count, setCount] = useState(1)
+    const [oculto, setOculto] = useState(false)
     const {agregarAlCarrito} = useContext(CartContext)
 
     const handleRestar = () => setCount(count - 1 )
     const handleSumar = () => setCount(count + 1 )
-    const handleAgregar = () => agregarAlCarrito({...prod,count})
+    const handleAgregar = () => {
+        agregarAlCarrito({...prod,count})
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Producto agregado al carrito",
+            showConfirmButton: false,
+            timer: 1500
+        })
+    } 
 
-    return (
+    if(oculto) return null 
+    
+        return (
         <div className="container-fluid">
             <div class="bg-gray-200 w-100 h-64 rounded-lg">
                 <div class="flex p-2 gap-1">
@@ -35,7 +48,9 @@ export default function ItemCount ({prod}) {
                             </div>
                         </div>
             <div className="row m-5 ">
-                <button onClick={handleAgregar}
+                <button onClick={()=>{
+                    setOculto(true),handleAgregar()
+                }} 
                 class="rounded-lg relative w-36 h-10 cursor-pointer flex items-center border border-green-500 bg-green-500 group hover:bg-green-500 active:bg-green-500 active:border-green-500"
                 >
                 <span
